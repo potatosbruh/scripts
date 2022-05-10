@@ -1,0 +1,24 @@
+--made by potato wink wink
+
+_G.autoTap = true; --global statement for tapping
+
+local remotePath = game:GetService("ReplicatedStorage");
+
+local taps = '9999999999999999999999999999999999999999999999999999999999999'
+
+
+
+spawn(function()
+while _G.autoTap == true do
+    local args = {
+        [1] = {
+            ["manual"] = {
+                [taps] = 128
+            }
+        }
+    }
+
+    remotePath.Clickerr:InvokeServer(unpack(args))
+        wait(1)
+    end
+end)
