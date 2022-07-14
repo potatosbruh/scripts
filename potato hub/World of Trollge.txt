@@ -48,6 +48,11 @@ end
 function nightsEssence()
 	easyTP(game:GetService("Workspace")["nights essence"].Handle.CFrame)
 end
+
+function relicFarm(relicSelected)
+	easyTP(game:GetService("Workspace")[relicSelected].Handle.CFrame)
+end
+
 -- init
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))()
 local venyx = library.new("World of Trollge", 5013109572)
@@ -66,6 +71,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 local page = venyx:addPage("Everything", 5012544693)
 local sec1 = page:addSection("Autos")
 local sec2 = page:addSection("TP's")
+local sec3 = page:addSection("Relics")
 
 sec1:addToggle("oil", nil, function(value)
 	while value == true do
@@ -124,4 +130,16 @@ end)
 
 sec2:addButton("Night Essence Creator", function()
 	nightEssence()
+end)
+
+local relicSelected
+sec3:addDropdown("Relics", {"None", "bday_relic", "dev relic", "mout_relic", "streetfighting_relic", "thevoices_relic"}, function(text)
+	relicSelected = text
+	print("Selected", text)
+end)
+
+sec3:addToggle("Relic Farm", function()
+	while selectedWorld do
+		relicFarm(relicSelected)
+	end
 end)
