@@ -76,7 +76,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 }
 
 -- first page
-local page = venyx:addPage("Autos", 5012544693)
+local page = venyx:addPage("Autos", 3971489730)
 local sec1 = page:addSection("Autos")
 
 sec1:addToggle("oil", nil, function(value)
@@ -114,7 +114,7 @@ sec1:addToggle("nights essence", nil, function(value)
 	end
 end)
 ---------------------------------------------------------
-local page2 = venyx:addPage("TP's", 5012544693) --page 2
+local page2 = venyx:addPage("TP's", 8096078873) --page 2
 local sect1 = page2:addSection("TP's")
 
 sect1:addButton("Forge", function()
@@ -149,7 +149,7 @@ sect1:addButton("Trader (Tree)", function()
 	trader()
 end)
 ---------------------------------------------------------
-local page3 = venyx:addPage("Others", 5012544693) --page 3
+local page3 = venyx:addPage("Others", 9788249827) --page 3
 local secy1 = page3:addSection("Others")
 
 local relicSelected
