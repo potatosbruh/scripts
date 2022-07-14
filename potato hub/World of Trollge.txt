@@ -53,6 +53,14 @@ function relicFarm(relicSelected)
 	easyTP(game:GetService("Workspace")[relicSelected].Handle.CFrame)
 end
 
+function uselessHole()
+	easyTP(game:GetService("Workspace")["The hole"].Part.CFrame)
+end
+
+function trader()
+	easyTP(game:GetService("Workspace")["Red Tree"].RedTreePortal.CFrame)
+end
+
 -- init
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))()
 local venyx = library.new("World of Trollge", 5013109572)
@@ -68,10 +76,8 @@ TextColor = Color3.fromRGB(255, 255, 255)
 }
 
 -- first page
-local page = venyx:addPage("Everything", 5012544693)
+local page = venyx:addPage("Autos", 5012544693)
 local sec1 = page:addSection("Autos")
-local sec2 = page:addSection("TP's")
-local sec3 = page:addSection("Relics")
 
 sec1:addToggle("oil", nil, function(value)
 	while value == true do
@@ -107,38 +113,52 @@ sec1:addToggle("nights essence", nil, function(value)
 		wait(.5)
 	end
 end)
+---------------------------------------------------------
+local page2 = venyx:addPage("TP's", 5012544693) --page 2
+local sect1 = page2:addSection("TP's")
 
-sec2:addButton("Forge", function()
+sect1:addButton("Forge", function()
     tpForge()
 end)
 
-sec2:addButton("Heart River", function()
+sect1:addButton("Heart River", function()
 	tpRiver()
 end)
 
-sec2:addButton("Upgrader", function()
+sect1:addButton("Upgrader", function()
 	tpUpgrade()
 end)
 
-sec2:addButton("Trade Center", function()
+sect1:addButton("Trade Center", function()
 	tradeCenter()
 end)
 
-sec2:addButton("Dark Orb Creator", function()
+sect1:addButton("Dark Orb Creator", function()
 	darkOrb()
 end)
 
-sec2:addButton("Night Essence Creator", function()
+sect1:addButton("Night Essence Creator", function()
 	nightEssence()
 end)
 
+sect1:addButton("Useless Hole", function()
+	uselessHole()
+end)
+
+sect1:addButton("Trader (Tree)", function()
+	trader()
+end)
+---------------------------------------------------------
+local page3 = venyx:addPage("Others", 5012544693) --page 3
+local secy1 = page3:addSection("Others")
+
 local relicSelected
-sec3:addDropdown("Relics", {"None", "bday_relic", "dev relic", "mout_relic", "streetfighting_relic", "thevoices_relic"}, function(text)
+secy1:addDropdown("Relics", {"None", "bday_relic", "dev relic", "mout_relic", "streetfighting_relic", "thevoices_relic"}, function(text)
 	relicSelected = text
 	print("Selected", text)
 end)
 
-sec3:addToggle("Relic Farm", function()
+secy1:addToggle("Relic Farm", function()
 	while selectedWorld do
 		relicFarm(relicSelected)
 	end
