@@ -163,3 +163,15 @@ secy1:addToggle("Relic Farm", function()
 		relicFarm(relicSelected)
 	end
 end)
+
+local UI = true
+secy1:addKeybind("Hide UI", Enum.KeyCode.One, function(value)
+	if UI == true then game:GetService("CoreGui")["World of Trollge"].Enabled = true
+		else if UI == false then
+	        game:GetService("CoreGui")["World of Trollge"].Enabled = false
+    end
+end
+venyx:toggle()
+		end, function()
+	print("Changed Keybind")
+end)
