@@ -3,7 +3,7 @@ getgenv().bloodfarm = false
 getgenv().mystfarm = false
 getgenv().sorrowfarm = false
 getgenv().nightfarm = false
-
+getgenv().relicfarm = false
 
 function easyTP(placeCFrame)
 	local player = game.Players.LocalPlayer;
@@ -63,6 +63,23 @@ function sorrowCup()
 	end)
 end
 
+function relicFarm()
+	spawn(function()
+		while relicfarm == true do
+			easyTP(game:GetService("Workspace")["bday_relic"].Handle.CFrame)
+			wait()
+			easyTP(game:GetService("Workspace")["mout_relic"].Handle.CFrame)
+			wait()
+			easyTP(game:GetService("Workspace")["dev relic"].Handle.CFrame)
+			wait()
+			easyTP(game:GetService("Workspace")["streetfighting_relic"].Handle.CFrame)
+			wait()
+			easyTP(game:GetService("Workspace")["thevoices_relic"].Handle.CFrame)
+			wait()
+		end
+	end)
+end
+
 function tpForge()
     easyTP(game:GetService("Workspace").Forging.anvil.Part.CFrame)
 end
@@ -81,10 +98,6 @@ end
 
 function darkOrb()
 	easyTP(game:GetService("Workspace").orb.Part.CFrame)
-end
-
-function relicFarm(relicSelected)
-	easyTP(game:GetService("Workspace")[relicSelected].Handle.CFrame)
 end
 
 function uselessHole()
@@ -112,6 +125,13 @@ TextColor = Color3.fromRGB(255, 255, 255)
 -- first page
 local page = venyx:addPage("Autos", 3971489730)
 local sec1 = page:addSection("Autos")
+
+sec1:addToggle("Relic Farm", nil, function(value)
+        getgenv().relicfarm = value
+        while value == true do
+            relicFarm()
+    end
+end)
 
 sec1:addToggle("oil", nil, function(value)
 		getgenv().oilfarm = value
@@ -190,18 +210,6 @@ end)
 ---------------------------------------------------------
 local page3 = venyx:addPage("Others", 9788249827) --page 3
 local secy1 = page3:addSection("Others")
-
-local relicSelected
-secy1:addDropdown("Relics", {"None", "bday_relic", "dev relic", "mout_relic", "streetfighting_relic", "thevoices_relic"}, function(text)
-	relicSelected = text
-	print("Selected", text)
-end)
-
-secy1:addToggle("Relic Farm", function()
-	while selectedWorld do
-		relicFarm(relicSelected)
-	end
-end)
 
 local UI = true
 secy1:addKeybind("Hide UI", Enum.KeyCode.One, function(value)
