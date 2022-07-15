@@ -143,7 +143,7 @@ end)
 
 sec1:NewToggle("blood", "farms blood", function(state)
 		getgenv().bloodfarm = state
-		while value == true do
+		while state == true do
 			bloodCup()
 		wait(.3)
 	end
@@ -151,7 +151,7 @@ end)
 
 sec1:NewToggle("mysterious cup", "farms mysterious cups", function(state)
 		getgenv().mystfarm = state
-		while value == true do
+		while state == true do
 			mystCup()
 		wait(.3)
 	end
@@ -159,7 +159,7 @@ end)
 
 sec1:NewToggle("sorrow cup", "farms sorrow cups", function(state)
 		getgenv().sorrowfarm = state
-		while value == true do
+		while state == true do
 			sorrowCup()
 		wait(.3)
 	end
@@ -167,7 +167,7 @@ end)
 
 sec1:NewToggle("nights essence", "do i even gotta say it", function(state)
 		getgenv().nightfarm = state
-		while value == true do
+		while state == true do
 			nightEssence()
 		wait(.3)
 	end
