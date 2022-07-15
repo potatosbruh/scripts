@@ -141,7 +141,7 @@ sec1:NewToggle("Oil Farm", "farms oil what else do i say", function(state)
     end
 end)
 
-sec1:NewToggle("blood", nil, function(state)
+sec1:NewToggle("blood", "farms blood", function(state)
 		getgenv().bloodfarm = state
 		while value == true do
 			bloodCup()
@@ -149,7 +149,7 @@ sec1:NewToggle("blood", nil, function(state)
 	end
 end)
 
-sec1:NewToggle("mysterious cup", nil, function(state)
+sec1:NewToggle("mysterious cup", "farms mysterious cups", function(state)
 		getgenv().mystfarm = state
 		while value == true do
 			mystCup()
@@ -157,7 +157,7 @@ sec1:NewToggle("mysterious cup", nil, function(state)
 	end
 end)
 
-sec1:NewToggle("sorrow cup", nil, function(state)
+sec1:NewToggle("sorrow cup", "farms sorrow cups", function(state)
 		getgenv().sorrowfarm = state
 		while value == true do
 			sorrowCup()
@@ -165,7 +165,7 @@ sec1:NewToggle("sorrow cup", nil, function(state)
 	end
 end)
 
-sec1:NewToggle("nights essence", nil, function(state)
+sec1:NewToggle("nights essence", "do i even gotta say it", function(state)
 		getgenv().nightfarm = state
 		while value == true do
 			nightEssence()
