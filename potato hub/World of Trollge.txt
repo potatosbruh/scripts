@@ -1,3 +1,10 @@
+getgenv().oilfarm = false
+getgenv().bloodfarm = false
+getgenv().mystfarm = false
+getgenv().sorrowfarm = false
+getgenv().nightfarm = false
+
+
 function easyTP(placeCFrame)
 	local player = game.Players.LocalPlayer;
 	if player.Character then
@@ -6,15 +13,54 @@ function easyTP(placeCFrame)
 end
 
 function oilCup()
-	easyTP(game:GetService("Workspace").oil.Part.CFrame)
+	spawn (function()
+		while oilfarm == true do
+			print("working")
+			easyTP(game:GetService("Workspace").oil.Part.CFrame)
+				wait()
+		end
+	end)
 end
 
+
 function bloodCup()
-	easyTP(game:GetService("Workspace").blood.Handle.CFrame)
+	spawn (function()
+		while bloodfarm == true do
+			print("working")
+			easyTP(game:GetService("Workspace").blood.Handle.CFrame)
+				wait()
+		end
+	end)
 end
 
 function mystCup()
-	easyTP(game:GetService("Workspace")["mysterious cup"].Handle.CFrame)
+	spawn (function()
+		while mystfarm == true do
+			print("working")
+			easyTP(game:GetService("Workspace")["mysterious cup"].Handle.CFrame)
+				wait()
+		end
+	end)
+end
+
+function nightEssence()
+	spawn (function()
+		while nightfarm == true do
+			print("working")
+			easyTP(game:GetService("Workspace")["Night's anvil plate"].Part.CFrame)
+				wait()
+		end
+	end)
+end
+
+function sorrowCup()
+	spawn (function()
+		while sorrowfarm == true do
+			print("working")
+			easyTP(game:GetService("Workspace")["sorrow cup"].Handle.CFrame)
+				wait()
+		end
+	end)
 end
 
 function tpForge()
@@ -35,18 +81,6 @@ end
 
 function darkOrb()
 	easyTP(game:GetService("Workspace").orb.Part.CFrame)
-end
-
-function nightEssence()
-	easyTP(game:GetService("Workspace")["Night's anvil plate"].Part.CFrame)
-end
-
-function sorrowCup()
-	easyTP(game:GetService("Workspace")["sorrow cup"].Handle.CFrame)
-end
-
-function nightsEssence()
-	easyTP(game:GetService("Workspace")["nights essence"].Handle.CFrame)
 end
 
 function relicFarm(relicSelected)
@@ -80,37 +114,42 @@ local page = venyx:addPage("Autos", 3971489730)
 local sec1 = page:addSection("Autos")
 
 sec1:addToggle("oil", nil, function(value)
-	while value == true do
-		oilCup()
-		wait(.5)
+		getgenv().oilfarm = value
+		while value == true do
+			oilCup()
+		wait(.3)
 	end
 end)
 
 sec1:addToggle("blood", nil, function(value)
-	while value == true do
-		bloodCup()
-		wait(.5)
+		getgenv().bloodfarm = value
+		while value == true do
+			bloodCup()
+		wait(.3)
 	end
 end)
 
 sec1:addToggle("mysterious cup", nil, function(value)
-	while value == true do
-		mystCup()
-		wait(.5)
+		getgenv().mystfarm = value
+		while value == true do
+			mystCup()
+		wait(.3)
 	end
 end)
 
 sec1:addToggle("sorrow cup", nil, function(value)
-	while value == true do
-		sorrowCup()
-		wait(.5)
+		getgenv().sorrowfarm = value
+		while value == true do
+			sorrowCup()
+		wait(.3)
 	end
 end)
 
 sec1:addToggle("nights essence", nil, function(value)
-	while value == true do
-		nightsEssence()
-		wait(.5)
+		getgenv().nightfarm = value
+		while value == true do
+			nightEssence()
+		wait(.3)
 	end
 end)
 ---------------------------------------------------------
