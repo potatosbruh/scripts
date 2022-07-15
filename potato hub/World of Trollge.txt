@@ -75,7 +75,7 @@ function relicFarm()
 			easyTP(game:GetService("Workspace")["streetfighting_relic"].Handle.CFrame)
 			wait()
 			easyTP(game:GetService("Workspace")["thevoices_relic"].Handle.CFrame)
-			wait()
+			wait(.3)
 		end
 	end)
 end
