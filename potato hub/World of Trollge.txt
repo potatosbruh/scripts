@@ -75,7 +75,7 @@ function relicFarm()
 			easyTP(game:GetService("Workspace")["streetfighting_relic"].Handle.CFrame)
 			wait()
 			easyTP(game:GetService("Workspace")["thevoices_relic"].Handle.CFrame)
-			wait(.3)
+			wait()
 		end
 	end)
 end
@@ -130,6 +130,7 @@ sec1:addToggle("Relic Farm", nil, function(value)
         getgenv().relicfarm = value
         while value == true do
             relicFarm()
+		wait(.3)
     end
 end)
 
