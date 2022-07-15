@@ -220,3 +220,7 @@ sec3:NewButton("Kill Boss (only works in ps with only you in it)", "kills the bo
         end
     end
 end)
+
+sec3:NewButton("Reviz Admin", "Injects Reviz Admin", function()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/potatosbruh/scripts/main/revizadmincuzicantfindrealone/revizadmin.lua', true))()
+end)
