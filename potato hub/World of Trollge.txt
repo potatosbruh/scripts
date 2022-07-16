@@ -116,14 +116,23 @@ end
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 
 local Window = Library.CreateLib("World of Trollge", "Synapse")
+local Home = Window:NewTab("Home")
 local Tab = Window:NewTab("Autos")
 local Tab2 = Window:NewTab("TP's")
 local Tab3 = Window:NewTab("Others")
 
+local home = Home:NewSection("Home")
 local sec1 = Tab:NewSection("Autos")
 local sec2 = Tab2:NewSection("TP's")
 local sec3 = Tab3:NewSection("Others")
 
+
+home:NewLabel("do not use dio while using this autos, tps dont work")
+
+
+
+
+--------------------------------------------------------------------------------------- tab 1
 
 sec1:NewToggle("Relic Farm", "This farms RELICS (self explanatory)", function(state)
         getgenv().relicfarm = state
