@@ -173,6 +173,13 @@ sec1:NewToggle("Night Essence Farm", "do i even gotta say it", function(state)
 	end
 end)
 
+sec1:NewToggle("adding for scroll on mobile", "omg", function(state)
+		while state == true do
+			print("omg")
+		wait(.3)
+	end
+end)
+
 ------------------------------------------------- tab 2
 
 sec2:NewButton("Forge", "teleports to the forge", function()
@@ -223,4 +230,12 @@ end)
 
 sec3:NewButton("Reviz Admin", "Injects Reviz Admin", function()
 	loadstring(game:HttpGet('https://raw.githubusercontent.com/potatosbruh/scripts/main/revizadmincuzicantfindrealone/revizadmin.lua', true))()
+end)
+
+sec3:NewSlider("Walkspeed", "changes ur walkspeed", 200, 5, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+sec3:NewSlider("JumpPower", "changes ur jump power", 500, 25, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
 end)
