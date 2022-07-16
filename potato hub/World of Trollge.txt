@@ -219,14 +219,25 @@ sec3:NewKeybind("Hide UI", "KeybindInfo", Enum.KeyCode.M, function()
 	Library:ToggleUI()
 end)
 
-sec3:NewButton("Kill Boss (only works in ps with only you in it)", "kills the boss that is in your private server", function()
+sec3:NewButton("Kill Night Crawler (only works in private server)", "kills the boss that is in your private server", function()
     if game:GetService("Workspace")["night crawler"].Humanoid then
         game:GetService("Workspace")["night crawler"].Humanoid.Health = 0
-    else if game:GetService("Workspace")["crazy trollge"].Humanoid then
-            game:GetService("Workspace")["crazy trollge"].Humanoid.Health = 0
-        end
     end
 end)
+
+sec3:NewButton("Kill Crazy Trollge (only works in private server)", "kills the boss that is in your private server", function()
+    if game:GetService("Workspace")["crazy trollge"].Humanoid then
+        game:GetService("Workspace")["crazy trollge"].Humanoid.Health = 0
+    end
+end)
+
+sec3:NewButton("Kill Tech Boss (only works in private server)", "kills the boss that is in your private server", function()
+    if game:GetService("Workspace").tech.Humanoid then
+        game:GetService("Workspace").tech.Humanoid.Health = 0
+    end
+end)
+
+game:GetService("Workspace")["crazy trollge"].Humanoid.Health = 0
 
 sec3:NewButton("Reviz Admin", "Injects Reviz Admin", function()
 	loadstring(game:HttpGet('https://raw.githubusercontent.com/potatosbruh/scripts/main/revizadmincuzicantfindrealone/revizadmin.lua', true))()
@@ -239,5 +250,3 @@ end)
 sec3:NewSlider("JumpPower", "changes ur jump power", 500, 25, function(s) -- 500 (MaxValue) | 0 (MinValue)
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
 end)
-
---omg omg omgin
