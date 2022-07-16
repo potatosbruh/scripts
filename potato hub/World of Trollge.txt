@@ -180,6 +180,38 @@ sec1:NewToggle("adding for scroll on mobile", "omg", function(state)
 	end
 end)
 
+
+sec1:NewToggle("adding for scroll on mobile", "omg", function(state)
+		while state == true do
+			print("omg")
+		wait(.3)
+	end
+end)
+
+
+sec1:NewToggle("adding for scroll on mobile", "omg", function(state)
+		while state == true do
+			print("omg")
+		wait(.3)
+	end
+end)
+
+
+sec1:NewToggle("adding for scroll on mobile", "omg", function(state)
+		while state == true do
+			print("omg")
+		wait(.3)
+	end
+end)
+
+
+sec1:NewToggle("adding for scroll on mobile", "omg", function(state)
+		while state == true do
+			print("omg")
+		wait(.3)
+	end
+end)	
+
 ------------------------------------------------- tab 2
 
 sec2:NewButton("Forge", "teleports to the forge", function()
