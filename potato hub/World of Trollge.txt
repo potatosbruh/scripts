@@ -4,6 +4,13 @@ getgenv().mystfarm = false
 getgenv().sorrowfarm = false
 getgenv().nightfarm = false
 getgenv().relicfarm = false
+getgenv().flamingsteal = false
+getgenv().mechanicalsteal = false
+getgenv().heartysteal = false
+getgenv().holysteal = false
+getgenv().donatesteal = false
+
+
 
 function easyTP(placeCFrame)
 	local player = game.Players.LocalPlayer;
@@ -12,22 +19,72 @@ function easyTP(placeCFrame)
 	end
 end
 
-
-function oilCup()
-	spawn (function()
-		while oilfarm == true do
-			print("working")
-			easyTP(game:GetService("Workspace").oil.Part.CFrame)
+function flamingOil()
+	spawn(function()
+		while flamingsteal == true do
+			easyTP(game:GetService("Workspace")["flaming oil"].Handle.CFrame)
 				wait()
 		end
 	end)
 end
 
+function mechanicalCup()
+	spawn(function()
+		while mechanicalsteal == true do
+			easyTP(game:GetService("Workspace")["mechanical cup"].Handle.CFrame)
+				wait()
+		end
+	end)
+end
+
+function heartyCup()
+	spawn(function()
+		while heartysteal == true do
+			easyTP(game:GetService("Workspace")["hearty cup"].Handle.CFrame)
+				wait()
+		end
+	end)
+end
+
+function holyCup()
+	spawn(function()
+		while holysteal == true do
+			easyTP(game:GetService("Workspace")["holy cup"].Handle.CFrame)
+				wait()
+		end
+	end)
+end
+
+function lagCup()
+	spawn(function()
+		while lagsteal == true do
+			easyTP(game:GetService("Workspace")["lag commander cup"].Handle.CFrame)
+				wait()
+		end
+	end)
+end
+
+function donaterCup()
+	spawn(function()
+		while donatesteal == true do
+			easyTP(game:GetService("Workspace").donatercup.Handle.CFrame)
+				wait()
+		end
+	end)
+end
+
+function oilCup()
+	spawn (function()
+		while oilfarm == true do
+			easyTP(game:GetService("Workspace").oil.Handle.CFrame)
+				wait()
+		end
+	end)
+end
 
 function bloodCup()
 	spawn (function()
 		while bloodfarm == true do
-			print("working")
 			easyTP(game:GetService("Workspace").blood.Handle.CFrame)
 				wait()
 		end
@@ -37,7 +94,6 @@ end
 function mystCup()
 	spawn (function()
 		while mystfarm == true do
-			print("working")
 			easyTP(game:GetService("Workspace")["mysterious cup"].Handle.CFrame)
 				wait()
 		end
@@ -47,7 +103,6 @@ end
 function nightEssence()
 	spawn (function()
 		while nightfarm == true do
-			print("working")
 			easyTP(game:GetService("Workspace")["nights essence"].Handle.CFrame)
 				wait()
 		end
@@ -57,7 +112,6 @@ end
 function sorrowCup()
 	spawn (function()
 		while sorrowfarm == true do
-			print("working")
 			easyTP(game:GetService("Workspace")["sorrow cup"].Handle.CFrame)
 				wait()
 		end
@@ -119,12 +173,16 @@ local Window = Library.CreateLib("World of Trollge", "Synapse")
 local Home = Window:NewTab("Home")
 local Tab = Window:NewTab("Autos")
 local Tab2 = Window:NewTab("TP's")
-local Tab3 = Window:NewTab("Others")
+local Tab3 = Window:NewTab("Kill Bosses")
+local Tab4 = Window:NewTab("Stealing")
+local Tab5 = Window:NewTab("Others")
 
 local home = Home:NewSection("Home")
 local sec1 = Tab:NewSection("Autos")
 local sec2 = Tab2:NewSection("TP's")
-local sec3 = Tab3:NewSection("Others")
+local sec3 = Tab3:NewSection("Bosses")
+local sec4 = Tab4:NewSection("Stealing Autos")
+local sec5 = Tab5:NewSection("Others")
 
 
 home:NewLabel("do not use dio while using this autos, tps dont work")
@@ -224,10 +282,6 @@ sec2:NewButton("Trader (Tree)", "teleports to the tree trader place", function()
 end)
 ---------------------------------------------------------------------------------------------------- tab 3
 
-sec3:NewKeybind("Hide UI", "KeybindInfo", Enum.KeyCode.M, function()
-	Library:ToggleUI()
-end)
-
 sec3:NewButton("Kill Night Crawler (only works in private server)", "kills the boss that is in your private server", function()
     if game:GetService("Workspace")["night crawler"].Humanoid then
         game:GetService("Workspace")["night crawler"].Humanoid.Health = 0
@@ -246,16 +300,62 @@ sec3:NewButton("Kill Tech Boss (only works in private server)", "kills the boss 
     end
 end)
 
-game:GetService("Workspace")["crazy trollge"].Humanoid.Health = 0
+---------------------------------------------------------------------------------------------------------------------------------------steal tab
 
-sec3:NewButton("Reviz Admin", "Injects Reviz Admin", function()
+sec4:NewToggle("flaming oil steal", "omg", function(state)
+		getgenv().flamingsteal = state
+		while state == true do
+			flamingOil()
+		wait(.1)
+	end
+end)
+
+sec4:NewToggle("mechanical cup steal", "omg", function(state)
+		getgenv().mechanicalsteal = state
+		while state == true do
+			mechanicalCup()
+		wait(.1)
+	end
+end)
+
+sec4:NewToggle("hearty cup steal", "omg", function(state)
+		getgenv().heartysteal = state
+		while state == true do
+			heartyCup()
+		wait(.1)
+	end
+end)
+
+sec4:NewToggle("holy cup steal", "omg", function(state)
+		getgenv().holysteal = state
+		while state == true do
+			holyCup()
+		wait(.1)
+	end
+end)
+
+sec4:NewToggle("donator cup steal", "omg", function(state)
+		getgenv().donatesteal = state
+		while state == true do
+			donaterCup()
+		wait(.1)
+	end
+end)
+
+---------------------------------------------------------------------- tab 5
+
+sec5:NewKeybind("Hide UI", "KeybindInfo", Enum.KeyCode.M, function()
+	Library:ToggleUI()
+end)
+
+sec5:NewButton("Reviz Admin", "Injects Reviz Admin", function()
 	loadstring(game:HttpGet('https://raw.githubusercontent.com/potatosbruh/scripts/main/revizadmincuzicantfindrealone/revizadmin.lua', true))()
 end)
 
-sec3:NewSlider("Walkspeed", "changes ur walkspeed", 200, 5, function(s) -- 500 (MaxValue) | 0 (MinValue)
+sec5:NewSlider("Walkspeed", "changes ur walkspeed", 200, 5, function(s) -- 500 (MaxValue) | 0 (MinValue)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
 end)
 
-sec3:NewSlider("JumpPower", "changes ur jump power", 500, 25, function(s) -- 500 (MaxValue) | 0 (MinValue)
+sec5:NewSlider("JumpPower", "changes ur jump power", 500, 25, function(s) -- 500 (MaxValue) | 0 (MinValue)
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
 end)
