@@ -271,3 +271,6 @@ end)
 sec3:NewSlider("JumpPower", "changes ur jump power", 500, 25, function(s) -- 500 (MaxValue) | 0 (MinValue)
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
 end)
+
+
+--omg omg omg omg omg omg omg omg omg omg
