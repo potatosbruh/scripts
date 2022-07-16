@@ -180,38 +180,6 @@ sec1:NewToggle("adding for scroll on mobile", "omg", function(state)
 	end
 end)
 
-
-sec1:NewToggle("adding for scroll on mobile", "omg", function(state)
-		while state == true do
-			print("omg")
-		wait(.3)
-	end
-end)
-
-
-sec1:NewToggle("adding for scroll on mobile", "omg", function(state)
-		while state == true do
-			print("omg")
-		wait(.3)
-	end
-end)
-
-
-sec1:NewToggle("adding for scroll on mobile", "omg", function(state)
-		while state == true do
-			print("omg")
-		wait(.3)
-	end
-end)
-
-
-sec1:NewToggle("adding for scroll on mobile", "omg", function(state)
-		while state == true do
-			print("omg")
-		wait(.3)
-	end
-end)	
-
 ------------------------------------------------- tab 2
 
 sec2:NewButton("Forge", "teleports to the forge", function()
@@ -272,5 +240,4 @@ sec3:NewSlider("JumpPower", "changes ur jump power", 500, 25, function(s) -- 500
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
 end)
 
-
---omg omg omg omg omg omg omg omg omg omg
+--omg omg om
