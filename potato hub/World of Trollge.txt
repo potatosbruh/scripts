@@ -240,4 +240,4 @@ sec3:NewSlider("JumpPower", "changes ur jump power", 500, 25, function(s) -- 500
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
 end)
 
---omg omg om
+--omg omg omgin
