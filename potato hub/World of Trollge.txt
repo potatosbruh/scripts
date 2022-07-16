@@ -342,6 +342,14 @@ sec4:NewToggle("donator cup steal", "omg", function(state)
 	end
 end)
 
+sec4:NewToggle("lag cup steal", "omg", function(state)
+		getgenv().lagsteal = state
+		while state == true do
+			lagCup()
+		wait(.1)
+	end
+end)
+
 ---------------------------------------------------------------------- tab 5
 
 sec5:NewKeybind("Hide UI", "KeybindInfo", Enum.KeyCode.M, function()
