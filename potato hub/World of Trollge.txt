@@ -356,8 +356,8 @@ sec5:NewKeybind("Hide UI", "KeybindInfo", Enum.KeyCode.M, function()
 	Library:ToggleUI()
 end)
 
-sec5:NewButton("Reviz Admin", "Injects Reviz Admin", function()
-	loadstring(game:HttpGet('https://raw.githubusercontent.com/potatosbruh/scripts/main/revizadmincuzicantfindrealone/revizadmin.lua', true))()
+sec5:NewButton("Fates Admin", "Injects Fates Admin", function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))()
 end)
 
 sec5:NewSlider("Walkspeed", "changes ur walkspeed", 200, 5, function(s) -- 500 (MaxValue) | 0 (MinValue)
