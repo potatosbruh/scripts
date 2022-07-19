@@ -2170,7 +2170,7 @@ function easyTP(placeCFrame)
 end
 
 function tpForge()
-    easyTP(game:GetService("Workspace").Forging.Part.CFrame)
+    easyTP(game:GetService("Workspace").Forging.anvil.Part.CFrame)
 end
 
 function tpNight()
@@ -2229,6 +2229,14 @@ sec1:NewToggle("Auto Farm", "This farms EVERYTHING (self explanatory)", function
         getgenv().farm = state
         while state == true do
             autoFarm()
+        wait(.1)
+    end
+end)
+
+sec1:NewToggle("Auto Craft", "This Crafts OIL", function(state)
+        getgenv().craft = state
+        while state == true do
+            autoCraft()
         wait(.1)
     end
 end)
