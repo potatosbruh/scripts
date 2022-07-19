@@ -2463,8 +2463,9 @@ local sec3 = Tab3:NewSection("Bosses")
 local sec5 = Tab5:NewSection("Others")
 
 
-home:NewLabel("do not use dio while using this autos, tps dont work")
-
+home:NewLabel("use normal trolls while using this")
+home:NewLabel("Credits to fates admin script")
+home:NewLabel("Credits to r1ck#6969 for making most of this")
 
 
 
