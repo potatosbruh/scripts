@@ -2120,7 +2120,7 @@ end
 
 getgenv().farm = false
 getgenv().craft = false
-
+getgenv().afk = false
 
 function autoCraft()
     spawn(function()
@@ -2233,12 +2233,17 @@ sec1:NewToggle("Auto Farm", "This farms EVERYTHING (self explanatory)", function
     end
 end)
 
-sec1:NewToggle("Auto Craft", "This Crafts OIL", function(state)
+sec1:NewToggle("Auto Craft OIL", "This Crafts OIL", function(state)
         getgenv().craft = state
+        tpForge()
         while state == true do
             autoCraft()
         wait(.1)
     end
+end)
+
+sec1:NewButton("Anti AFK (Credits to Warn)", "teleports to the forge", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/sDXcYFhR", true))()
 end)
 
 ------------------------------------------------- tab 2
