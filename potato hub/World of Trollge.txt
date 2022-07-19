@@ -2416,7 +2416,7 @@ function easyTP(placeCFrame)
 end
 
 function tpForge()
-    easyTP(game:GetService("Workspace").Forging.Part.CFrame)
+    easyTP(game:GetService("Workspace").Forging.anvil.Part.CFrame)
 end
 
 function tpNight()
