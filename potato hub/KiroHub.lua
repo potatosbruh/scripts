@@ -10,13 +10,6 @@ getgenv().heartysteal = false
 getgenv().holysteal = false
 getgenv().donatesteal = false
 
-function easyTPF(placeCFrame)
-	local player = game.Players.LocalPlayer;
-	if player.Character then
-		player.Character.Head.CFrame = placeCFrame
-	end
-end
-
 function easyTP(placeCFrame)
 	local player = game.Players.LocalPlayer;
 	if player.Character then
@@ -81,7 +74,7 @@ end
 function oilCup()
 	spawn (function()
 		while oilfarm == true do
-			easyTPF(game:GetService("Workspace").oil.Handle.CFrame)
+			easyTP(game:GetService("Workspace").oil.Handle.CFrame)
 				wait()
 		end
 	end)
