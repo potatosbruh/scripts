@@ -174,7 +174,7 @@ end
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 
-local Window = Library.CreateLib("KiroHub", "GrapeTheme")
+local Window = Library.CreateLib("KiroHub(MOBILE VERSION)", "GrapeTheme")
 local Home = Window:NewTab("Home")
 local Tab = Window:NewTab("Autos")
 local Tab2 = Window:NewTab("TP's")
@@ -359,14 +359,6 @@ end)
 
 sec5:NewKeybind("Hide UI", "KeybindInfo", Enum.KeyCode.M, function()
 	Library:ToggleUI()
-end)
-
-sec5:NewButton("Fates Admin", "Injects Fates Admin", function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))()
-end)
-
-sec5:NewButton("Dark Dex", "Injects Dark Dex", function()
-	loadstring(game:HttpGet('https://raw.githubusercontent.com/potatosbruh/scripts/main/dex%20cuz%20i%20cant%20find%20online/darkdex.lua', true))()
 end)
 
 sec5:NewSlider("Walkspeed", "changes ur walkspeed", 200, 5, function(s) -- 500 (MaxValue) | 0 (MinValue)
