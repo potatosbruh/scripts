@@ -9,6 +9,8 @@ getgenv().mechanicalsteal = false
 getgenv().heartysteal = false
 getgenv().holysteal = false
 getgenv().donatesteal = false
+getgenv().killnight = false
+getgenv().killcrazy = false
 
 function easyTP(placeCFrame)
 	local player = game.Players.LocalPlayer;
@@ -165,13 +167,31 @@ function trader()
 	easyTP(game:GetService("Workspace")["Red Tree"].RedTreePortal.CFrame)
 end
 
+function autokillNight()
+	spawn(function()
+		while getgenv().killnight == true do
+			game:GetService("Workspace")["night crawler"].Humanoid.Health = 0
+			wait(1)
+		end
+	end)
+end
+
+function autokillCrazy()
+	spawn(function()
+		while getgenv().killcrazy == true do
+			game:GetService("Workspace")["crazy trollge"].Humanoid.Health = 0
+			wait(1)
+		end
+	end)
+end
+
 loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/rodus", true))() -- put this first above everything (important!)
 
 CreateMain("MANUGUERRA") -- example main
 
 CreateTab("autos") -- example tab
 CreateTab("tps")
-
+CreateTab("auto kill bosses")
 
 CreateToggle(tabs['autos'], "autofarm oil", "This button is toggleable!",function() -- example toggle
             getgenv().oilfarm = toggled
@@ -243,4 +263,20 @@ end)
 
 CreateButton(tabs['tps'],"Trader (Tree)", "teleports to the tree trader place", function()
 	trader()
+end)
+
+CreateToggle(tabs['auto kill bosses'], "auto kill night crawler", "This button is toggleable!",function() -- example toggle
+            getgenv().killnight = toggled
+        while toggled == true do
+            autokillNight()
+		wait(1)
+	end
+end)
+
+CreateToggle(tabs['auto kill bosses'], "auto kill crazy trollge", "This button is toggleable!",function() -- example toggle
+            getgenv().killcrazy = toggled
+        while toggled == true do
+            autokillCrazy()
+		wait(1)
+	end
 end)
