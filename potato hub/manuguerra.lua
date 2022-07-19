@@ -170,11 +170,77 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-f
 CreateMain("MANUGUERRA") -- example main
 
 CreateTab("autos") -- example tab
+CreateTab("tps")
 
-CreateToggle(tabs['autos'], "autofarm oil", "This button is toggleable!",function(state) -- example toggle
-            getgenv().oilfarm = state
-        while state == true do
+
+CreateToggle(tabs['autos'], "autofarm oil", "This button is toggleable!",function() -- example toggle
+            getgenv().oilfarm = toggled
+        while toggled == true do
             oilCup()
 		wait(.3)
 	end
+end)
+
+CreateToggle(tabs['autos'], "autofarm blood", "This button is toggleable!",function() -- example toggle
+            getgenv().bloodfarm = toggled
+        while toggled == true do
+            bloodCup()
+		wait(.3)
+	end
+end)
+
+CreateToggle(tabs['autos'], "autofarm mysterious cup", "This button is toggleable!",function() -- example toggle
+            getgenv().mystfarm = toggled
+        while toggled == true do
+            mystCup()
+		wait(.3)
+	end
+end)
+
+CreateToggle(tabs['autos'], "autofarm sorrow cup", "This button is toggleable!",function() -- example toggle
+            getgenv().sorrowfarm = toggled
+        while toggled == true do
+            sorrowCup()
+		wait(.3)
+	end
+end)
+
+CreateToggle(tabs['autos'], "autofarm night essence", "This button is toggleable!",function() -- example toggle
+            getgenv().nightfarm = toggled
+        while toggled == true do
+            nightEssence()
+		wait(.3)
+	end
+end)
+
+CreateButton(tabs['tps'], "Forge", "This button is clickable!",function() -- example button
+    tpForge()
+end)
+
+CreateButton(tabs['tps'],"Heart River", "teleports to the hearty river", function()
+	tpRiver()
+end)
+
+CreateButton(tabs['tps'],"Upgrader", "teleports to the upgrader", function()
+	tpUpgrade()
+end)
+
+CreateButton(tabs['tps'],"Trade Center", "teleports to the trade center", function()
+	tradeCenter()
+end)
+
+CreateButton(tabs['tps'],"Dark Orb Creator", "teleports to the dark orb creator", function()
+	darkOrb()
+end)
+
+CreateButton(tabs['tps'],"Night Essence Creator", "teleports to the night essence creator", function()
+	tpNight()
+end)
+
+CreateButton(tabs['tps'],"Useless Hole", "teleports to the useless hole", function()
+	uselessHole()
+end)
+
+CreateButton(tabs['tps'],"Trader (Tree)", "teleports to the tree trader place", function()
+	trader()
 end)
