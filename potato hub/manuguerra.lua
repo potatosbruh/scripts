@@ -172,9 +172,9 @@ CreateMain("MANUGUERRA") -- example main
 CreateTab("autos") -- example tab
 
 CreateToggle(tabs['autos'], "autofarm oil", "This button is toggleable!",function(state) -- example toggle
-            getgenv().relicfarm = state
+            getgenv().oilfarm = state
         while state == true do
-            relicFarm()
+            oilCup()
 		wait(.3)
 	end
 end)
