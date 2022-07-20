@@ -2294,7 +2294,7 @@ sec3:NewButton("Kill Night Crawler (only works in private server)", "kills the b
     if game:GetService("Workspace")["night crawler"].Humanoid then
         game:GetService("Workspace")["night crawler"].Humanoid.Health = 0
     end
-end)x
+end)
 
 sec3:NewButton("Kill Crazy Trollge (only works in private server)", "kills the boss that is in your private server", function()
     if game:GetService("Workspace")["crazy trollge"].Humanoid then
