@@ -2121,6 +2121,8 @@ end
 getgenv().farm = false
 getgenv().craft = false
 getgenv().afk = false
+getgenv().killnight = false
+getgenv().killcrazy = false
 
 function autoCraft()
     spawn(function()
@@ -2170,7 +2172,7 @@ function easyTP(placeCFrame)
 end
 
 function tpForge()
-    easyTP(game:GetService("Workspace").Forging.Part.anvil.CFrame)
+    easyTP(game:GetService("Workspace").Forging.anvil.Part.CFrame)
 end
 
 function tpNight()
@@ -2203,6 +2205,24 @@ end
 
 function oilman()
     easyTP(game:GetService("Workspace")["Oil-manBase"].anvil.Part.CFrame)
+end
+
+function autokillNight()
+	spawn(function()
+		while getgenv().killnight == true do
+			game:GetService("Workspace")["night crawler"].Humanoid.Health = 0
+			wait(1)
+		end
+	end)
+end
+
+function autokillCrazy()
+	spawn(function()
+		while getgenv().killcrazy == true do
+			game:GetService("Workspace")["crazy trollge"].Humanoid.Health = 0
+			wait(1)
+		end
+	end)
 end
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
@@ -2290,15 +2310,19 @@ end)
 
 ---------------------------------------------------------------------------------------------------- tab 3
 
-sec3:NewButton("Kill Night Crawler (only works in private server)", "kills the boss that is in your private server", function()
-    if game:GetService("Workspace")["night crawler"].Humanoid then
-        game:GetService("Workspace")["night crawler"].Humanoid.Health = 0
+sec1:NewToggle("Auto Kill Night Crawler", "This auto kills this boss", function(state)
+        getgenv().killnight = state
+        while state == true do
+            autokillNight()
+        wait(.1)
     end
 end)
 
-sec3:NewButton("Kill Crazy Trollge (only works in private server)", "kills the boss that is in your private server", function()
-    if game:GetService("Workspace")["crazy trollge"].Humanoid then
-        game:GetService("Workspace")["crazy trollge"].Humanoid.Health = 0
+sec1:NewToggle("Auto Kill Crazy Trollge", "This auto kills this boss", function(state)
+        getgenv().killcrazy = state
+        while state == true do
+            autokillCrazy()
+        wait(.1)
     end
 end)
 
@@ -2311,10 +2335,6 @@ end)
 
 sec5:NewKeybind("Hide UI", "KeybindInfo", Enum.KeyCode.M, function()
 	Library:ToggleUI()
-end)
-
-sec5:NewButton("Fates Admin", "Injects Fates Admin", function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))()
 end)
 
 sec5:NewButton("Dark Dex", "Injects Dark Dex", function()
