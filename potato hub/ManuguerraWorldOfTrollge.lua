@@ -187,7 +187,7 @@ end
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/rodus", true))() -- put this first above everything (important!)
 
-CreateMain("MANUGUERRA") -- example main
+CreateMain("World of Trollge (old autofarms)") -- example main
 
 CreateTab("autos") -- example tab
 CreateTab("tps")
