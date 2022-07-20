@@ -2170,7 +2170,7 @@ function easyTP(placeCFrame)
 end
 
 function tpForge()
-    easyTP(game:GetService("Workspace").Forging.anvil.Part.CFrame)
+    easyTP(game:GetService("Workspace").Forging.Part.anvil.CFrame)
 end
 
 function tpNight()
@@ -2198,7 +2198,7 @@ function uselessHole()
 end
 
 function trader()
-	easyTP(game:GetService("Workspace")["Red Tree"].RedTreePortal.CFrame)
+	easyTP(game:GetService("Workspace").gamebuildsthatdontchange["Red Tree"].RedTreePortal.CFrame)
 end
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
@@ -2285,7 +2285,7 @@ sec3:NewButton("Kill Night Crawler (only works in private server)", "kills the b
     if game:GetService("Workspace")["night crawler"].Humanoid then
         game:GetService("Workspace")["night crawler"].Humanoid.Health = 0
     end
-end)
+end)x
 
 sec3:NewButton("Kill Crazy Trollge (only works in private server)", "kills the boss that is in your private server", function()
     if game:GetService("Workspace")["crazy trollge"].Humanoid then
