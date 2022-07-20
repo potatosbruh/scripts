@@ -2201,6 +2201,10 @@ function trader()
 	easyTP(game:GetService("Workspace").gamebuildsthatdontchange["Red Tree"].RedTreePortal.CFrame)
 end
 
+function oilman()
+    easyTP(game:GetService("Workspace")["Oil-manBase"].anvil.Part.CFrame)
+end
+
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 
 local Window = Library.CreateLib("World of Trollge", "Synapse")
@@ -2279,6 +2283,11 @@ end)
 sec2:NewButton("Trader (Tree)", "teleports to the tree trader place", function()
 	trader()
 end)
+
+sec2:NewButton("Oil Man Base", "teleports to the oil man place", function()
+	trader()
+end)
+
 ---------------------------------------------------------------------------------------------------- tab 3
 
 sec3:NewButton("Kill Night Crawler (only works in private server)", "kills the boss that is in your private server", function()
