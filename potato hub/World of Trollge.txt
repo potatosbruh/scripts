@@ -2305,7 +2305,7 @@ sec2:NewButton("Trader (Tree)", "teleports to the tree trader place", function()
 end)
 
 sec2:NewButton("Oil Man Base", "teleports to the oil man place", function()
-	trader()
+	oilman()
 end)
 
 ---------------------------------------------------------------------------------------------------- tab 3
