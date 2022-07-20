@@ -2310,7 +2310,7 @@ end)
 
 ---------------------------------------------------------------------------------------------------- tab 3
 
-sec1:NewToggle("Auto Kill Night Crawler", "This auto kills this boss", function(state)
+sec3:NewToggle("Auto Kill Night Crawler", "This auto kills this boss", function(state)
         getgenv().killnight = state
         while state == true do
             autokillNight()
@@ -2318,7 +2318,7 @@ sec1:NewToggle("Auto Kill Night Crawler", "This auto kills this boss", function(
     end
 end)
 
-sec1:NewToggle("Auto Kill Crazy Trollge", "This auto kills this boss", function(state)
+sec3:NewToggle("Auto Kill Crazy Trollge", "This auto kills this boss", function(state)
         getgenv().killcrazy = state
         while state == true do
             autokillCrazy()
