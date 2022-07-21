@@ -2227,7 +2227,7 @@ end
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 
-local Window = Library.CreateLib("World of Trollge", "Synapse")
+local Window = Library.CreateLib("World of Trollge V1.2", "Synapse")
 local Home = Window:NewTab("Home")
 local Tab = Window:NewTab("Autos")
 local Tab2 = Window:NewTab("TP's")
@@ -2305,7 +2305,7 @@ sec2:NewButton("Trader (Tree)", "teleports to the tree trader place", function()
 end)
 
 sec2:NewButton("Oil Man Base", "teleports to the oil man place", function()
-	oilman()
+	trader()
 end)
 
 ---------------------------------------------------------------------------------------------------- tab 3
@@ -2347,4 +2347,9 @@ end)
 
 sec5:NewSlider("JumpPower", "changes ur jump power", 500, 25, function(s) -- 500 (MaxValue) | 0 (MinValue)
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+sec5:NewButton("Less Lag", "Gets rid of trees", function()
+	local tree = game:GetService("Workspace").Trees
+    tree:ClearAllChildren()
 end)
