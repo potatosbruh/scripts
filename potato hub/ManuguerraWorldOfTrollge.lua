@@ -192,6 +192,8 @@ CreateMain("World of Trollge (old autofarms)") -- example main
 CreateTab("autos") -- example tab
 CreateTab("tps")
 CreateTab("auto kill bosses")
+CreateTab("lessen lag")
+
 
 CreateToggle(tabs['autos'], "autofarm oil", "This button is toggleable!",function() -- example toggle
             getgenv().oilfarm = toggled
@@ -279,4 +281,9 @@ CreateToggle(tabs['auto kill bosses'], "auto kill crazy trollge", "This button i
             autokillCrazy()
 		wait(1)
 	end
+end)
+
+CreateButton(tabs['lessen lag'],"get rid of trees", "hmm i wonder", function()
+	local tree = game:GetService("Workspace").Trees
+	tree:ClearAllChildren()
 end)
