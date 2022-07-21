@@ -2227,7 +2227,7 @@ end
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 
-local Window = Library.CreateLib("World of Trollge V1.2", "Synapse")
+local Window = Library.CreateLib("World of Trollge", "Synapse")
 local Home = Window:NewTab("Home")
 local Tab = Window:NewTab("Autos")
 local Tab2 = Window:NewTab("TP's")
@@ -2305,7 +2305,7 @@ sec2:NewButton("Trader (Tree)", "teleports to the tree trader place", function()
 end)
 
 sec2:NewButton("Oil Man Base", "teleports to the oil man place", function()
-	trader()
+	oilman()
 end)
 
 ---------------------------------------------------------------------------------------------------- tab 3
